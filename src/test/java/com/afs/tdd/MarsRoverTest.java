@@ -1,0 +1,19 @@
+package com.afs.tdd;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class MarsRoverTest {
+    @Test
+    void should_x_0_y_1_heading_N_when_execute_given_x_0_y_0_N_and_command_M() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,"N");
+        //when
+        marsRover.executeCommands("M");
+        //then
+        assertEquals(0,marsRover.getLocationX());
+        assertEquals(0,marsRover.getLocationY());
+        assertEquals(0,marsRover.getHeading());
+    }
+}
