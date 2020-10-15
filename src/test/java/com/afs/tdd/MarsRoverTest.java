@@ -2,11 +2,13 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.rmi.UnexpectedException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class MarsRoverTest {
     @Test
-    void should_x_0_y_1_heading_N_when_execute_given_x_0_y_0_N_and_command_M() {
+    public void should_x_0_y_1_heading_N_when_execute_given_x_0_y_0_N_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //when
@@ -17,7 +19,7 @@ class MarsRoverTest {
         assertEquals("N",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_0_heading_W_when_execute_given_x_0_y_0_N_and_command_L() {
+    public void should_x_0_y_0_heading_W_when_execute_given_x_0_y_0_N_and_command_L() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //when
@@ -28,7 +30,7 @@ class MarsRoverTest {
         assertEquals("W",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_0_heading_E_when_execute_given_x_0_y_0_N_and_command_R() {
+    public void should_x_0_y_0_heading_E_when_execute_given_x_0_y_0_N_and_command_R() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //when
@@ -39,7 +41,7 @@ class MarsRoverTest {
         assertEquals("E",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_n1_heading_S_when_execute_given_x_0_y_0_S_and_command_M() {
+    public void should_x_0_y_n1_heading_S_when_execute_given_x_0_y_0_S_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"S");
         //when
@@ -50,7 +52,7 @@ class MarsRoverTest {
         assertEquals("S",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_0_heading_E_when_execute_given_x_0_y_0_S_and_command_L() {
+    public void should_x_0_y_0_heading_E_when_execute_given_x_0_y_0_S_and_command_L() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"S");
         //when
@@ -61,7 +63,7 @@ class MarsRoverTest {
         assertEquals("E",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_0_heading_W_when_execute_given_x_0_y_0_S_and_command_R() {
+    public void should_x_0_y_0_heading_W_when_execute_given_x_0_y_0_S_and_command_R() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"S");
         //when
@@ -72,7 +74,7 @@ class MarsRoverTest {
         assertEquals("W",marsRover.getHeading());
     }
     @Test
-    void should_x_1_y_0_heading_E_when_execute_given_x_0_y_0_E_and_command_M() {
+    public void should_x_1_y_0_heading_E_when_execute_given_x_0_y_0_E_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"E");
         //when
@@ -83,7 +85,7 @@ class MarsRoverTest {
         assertEquals("E",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_0_heading_N_when_execute_given_x_0_y_0_E_and_command_L() {
+    public void should_x_0_y_0_heading_N_when_execute_given_x_0_y_0_E_and_command_L() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"E");
         //when
@@ -94,7 +96,7 @@ class MarsRoverTest {
         assertEquals("N",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_0_heading_S_when_execute_given_x_0_y_0_E_and_command_R() {
+    public void should_x_0_y_0_heading_S_when_execute_given_x_0_y_0_E_and_command_R() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"E");
         //when
@@ -105,7 +107,7 @@ class MarsRoverTest {
         assertEquals("S",marsRover.getHeading());
     }
     @Test
-    void should_x_n1_y_0_heading_W_when_execute_given_x_0_y_0_W_and_command_M() {
+    public void should_x_n1_y_0_heading_W_when_execute_given_x_0_y_0_W_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"W");
         //when
@@ -116,7 +118,7 @@ class MarsRoverTest {
         assertEquals("W",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_0_heading_S_when_execute_given_x_0_y_0_W_and_command_L() {
+    public void should_x_0_y_0_heading_S_when_execute_given_x_0_y_0_W_and_command_L() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"W");
         //when
@@ -127,7 +129,7 @@ class MarsRoverTest {
         assertEquals("S",marsRover.getHeading());
     }
     @Test
-    void should_x_0_y_0_heading_N_when_execute_given_x_0_y_0_W_and_command_R() {
+    public void should_x_0_y_0_heading_N_when_execute_given_x_0_y_0_W_and_command_R() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"W");
         //when
@@ -138,7 +140,7 @@ class MarsRoverTest {
         assertEquals("N",marsRover.getHeading());
     }
     @Test
-    void should_x_n1_y_1_heading_N_when_execute_given_x_0_y_0_W_and_command_MLMR() {
+    public void should_x_n1_y_1_heading_N_when_execute_given_x_0_y_0_W_and_command_MLMR() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //when
@@ -148,6 +150,18 @@ class MarsRoverTest {
         assertEquals(1,marsRover.getLocationY());
         assertEquals("N",marsRover.getHeading());
     }
+
+    @Test
+    public void should_return_illegalArgumentException_execute_given_x_0_N_command_Q(){
+
+        MarsRover marsRover = new MarsRover(0,0,"N");
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> marsRover.executeCommands("Q"));
+        assertEquals("CommandNotDefinedException", exception.getMessage());
+
+
+    }
+
 
 
 

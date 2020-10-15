@@ -1,5 +1,6 @@
 package com.afs.tdd;
 
+
 import java.util.Arrays;
 
 public class MarsRover {
@@ -21,42 +22,32 @@ public class MarsRover {
         if(command.equals("M")) {
             move();
         }
-        if(command.equals("L")){
+        else if(command.equals("L")){
             turnLeft();
         }
-        if(command.equals("R")){
+        else if(command.equals("R")){
             turnRight();
+        }
+        else {
+            throw new IllegalArgumentException("CommandNotDefinedException");
         }
     }
 
     private void turnRight() {
-        if(heading.equals("N")){
-            heading = "E";
-        }
-        else if(heading.equals("S")){
-            heading = "W";
-        }
-        else if(heading.equals("E")){
-            heading = "S";
-        }
-        else if(heading.equals("W")){
-            heading = "N";
-        }
+
+            heading = heading.equals("N") ? "E"
+                    : heading.equals("S") ? "W"
+                    : heading.equals("E") ? "S"
+                    : heading.equals("N") ? "W"
+                    : heading;
     }
 
     private void turnLeft() {
-        if(heading.equals("N")){
-            heading = "W";
-        }
-        else if(heading.equals("S")){
-            heading = "E";
-        }
-        else if(heading.equals("E")){
-            heading = "N";
-        }
-        else if(heading.equals("W")){
-            heading = "S";
-        }
+        heading = heading.equals("N") ? "W"
+                : heading.equals("S") ? "E"
+                : heading.equals("E") ? "N"
+                : heading.equals("N") ? "S"
+                : heading;
     }
 
     private void move() {
@@ -72,6 +63,7 @@ public class MarsRover {
         if(heading.equals("W")){
             locationX += -1;
         }
+
     }
 
 
