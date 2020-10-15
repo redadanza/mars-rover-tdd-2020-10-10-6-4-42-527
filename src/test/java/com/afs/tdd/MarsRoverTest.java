@@ -153,10 +153,11 @@ class MarsRoverTest {
 
     @Test
     public void should_return_illegalArgumentException_execute_given_x_0_N_command_Q(){
-
+        //given
         MarsRover marsRover = new MarsRover(0,0,"N");
-
+        //when
         Exception exception = assertThrows(IllegalArgumentException.class, () -> marsRover.executeCommands("Q"));
+        //then
         assertEquals("CommandNotDefinedException", exception.getMessage());
 
 
