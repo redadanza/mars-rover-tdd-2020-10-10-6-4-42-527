@@ -13,7 +13,7 @@ class MarsRoverTest {
         marsRover.executeCommands("M");
         //then
         assertEquals(0,marsRover.getLocationX());
-        assertEquals(0,marsRover.getLocationY());
-        assertEquals(0,marsRover.getHeading());
+        assertEquals(1,marsRover.getLocationY());
+        assertEquals("N",marsRover.getHeading());
     }
 }
