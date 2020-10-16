@@ -7,7 +7,7 @@ import java.rmi.UnexpectedException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MarsRoverTest {
-    @Test
+    @Test // should_return_something_when_doingSomething_given_something
     public void should_x_0_y_1_heading_N_when_execute_given_x_0_y_0_N_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"N");

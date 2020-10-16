@@ -17,7 +17,7 @@ public class MarsRover {
     }
 
     public void executeCommands(String commands){
-        Arrays.asList(commands.split("")).forEach(command -> this.executeMovement(command));
+        Arrays.asList(commands.split("")).forEach(this::executeMovement);
     }
 
     private void executeMovement(String command) {
@@ -46,10 +46,11 @@ public class MarsRover {
     }
 
     private String getHeading(int index, List<String> stringList){
-
-        String nextHead = (index == 3) ? stringList.get(0)
+        //initially index == 0
+        String nextHead = (index == stringList.size() - 1) ? stringList.get(0)
                         : stringList.get(index + 1);
 
+        //refactor
         return stringList.stream().filter(head -> head.contains(nextHead)).collect(Collectors.joining());
 
     }
@@ -57,11 +58,11 @@ public class MarsRover {
     private void move() {
         locationY = heading.equals("N") ? locationY + 1
                 : heading.equals("S") ? locationY + -1
-                : locationY + 0;
+                : locationY;
 
         locationX = heading.equals("E") ? locationX + 1
                 : heading.equals("W") ? locationX + -1
-                : locationX + 0;
+                : locationX;
 
     }
 
